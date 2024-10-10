@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+            <menuitem
+                id="crm_menu_tables"
+                name="Tables"
+                parent="crm.crm_menu_root"
+                action="action_crm_table"
+                sequence="0"/>
+</odoo>
