@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_lead_form_ext" model="ir.ui.view">
+            <field name="name">crm.lead.form.ext</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="replace">
+                    <field name = "stage_id" widget = "statusbar" class ="o_field_statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" domain="[('table_ids.id', '=', table_id), '|', ('team_id', '=', team_id), ('team_id', '=', False)]" attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}" />
+                </xpath>
+                <xpath expr="//label[@for='phone']" position="before">
+                    <label for="table_id" string="Tablero"/>
+                    <div class="o_row o_row_readonly">
+                        <field name="table_id" />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

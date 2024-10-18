@@ -21,6 +21,7 @@ class CrmTable(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'Odoo - Oportunidades',
             'res_model': 'crm.lead',
-            'view_mode': 'kanban',
+            'view_mode': 'kanban,tree,form',
+            'view_id': False,
             'domain': [('table_id', '=', self.id)],
         }
